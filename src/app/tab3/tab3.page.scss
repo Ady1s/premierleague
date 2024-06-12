@@ -41,4 +41,18 @@
   height: 20px;
   margin-top: 5px; /* Odsazení nad vlajkou */
 }
+.page2-header {
+  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
+  color: #ffffff;
+}
+
+.page3-header {
+  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
+  color: #ffffff;
+}
+
+.page2-content,
+.page3-content {
+  background-color: #ecf0f1;
+}
 

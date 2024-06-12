@@ -29,3 +29,38 @@
         </ion-row>
     </ion-grid>
 </ion-content>
+<ion-header [translucent]="true" class="page2-header">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Page 2</ion-title>
+        <ion-avatar slot="start">
+            <ion-img src="assets/icon/favicon.png"></ion-img>
+        </ion-avatar>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar color="primary" [debounce]="300" (ionInput)="searchPlayer($event)"></ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="page2-content">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Page 2</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-list>
+        <ion-item *ngFor="let player of players2$ | async" routerLink="/player-details/{{ player.id }}" (click)="transferPlayer2(player)">
+            <ion-avatar slot="start">
+                <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+            </ion-avatar>
+            <ion-label>{{ player.name.display }}</ion-label>
+            <ion-note slot="end">
+                {{ player.birth.date.label }}
+            </ion-note>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
