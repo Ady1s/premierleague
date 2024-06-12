@@ -1,0 +1,12 @@
+{
+    "/api/*": {
+        "target": "https://footballapi.pulselive.com/football",
+        "secure": false,
+        "pathRewrite": {
+            "^/api": ""
+        },
+        "changeOrigin": true,
+        "logLevel": "debug",
+        "headers": {"origin": "https://www.premierleague.com"}
+    }
+}

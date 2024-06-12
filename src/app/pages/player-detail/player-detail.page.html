@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ player.name.display }}</ion-title>
+    <ion-avatar slot="start">
+      <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">{{ player.name.display }}</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Position</ion-label>
+      <ion-note slot="end">{{ player.info.position }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Shirt Number</ion-label>
+      <ion-note slot="end">{{ player.info.shirtNum }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Country</ion-label>
+      <ion-note slot="end">{{ player.nationalTeam.country }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birth Date</ion-label>
+      <ion-note slot="end">{{ player.birth.date.label }}</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>National team</ion-label>
+      <ion-note slot="end">{{ player.nationalTeam.country }}</ion-note>
+      <ion-img [src]="'https://resources.premierleague.com/premierleague/flags/' + player.nationalTeam.isoCode + '@x2.png'"></ion-img>
+    </ion-item>
+  </ion-list>
+
+
+
+</ion-content>
