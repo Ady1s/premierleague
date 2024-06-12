@@ -1,17 +1,27 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true" class="page2-header">
+    <ion-toolbar>
+        <ion-title>
+            Players
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="page2-content">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Players</ion-title>
+        </ion-toolbar>
+    </ion-header>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+    <ion-list>
+        <ion-item *ngFor="let player of players2$ | async" routerLink="/player" (click)="transferPlayer2(player)">
+            <ion-avatar slot="start" class="player-avatar">
+                <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+            </ion-avatar>
+            <ion-label>{{ player.name.display }}</ion-label>
+            <ion-note slot="end">
+                {{ player.birth.date.label }}
+            </ion-note>
+        </ion-item>
+    </ion-list>
 </ion-content>
