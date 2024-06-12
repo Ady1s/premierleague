@@ -1,0 +1,44 @@
+.page3-header {
+  background: linear-gradient(90deg, #ff0000, #b30000); /* Červený barevný gradient pro hlavičku */
+  color: #ffffff;
+}
+
+.page3-content {
+  background-color: #ecf0f1;
+}
+
+.player-col {
+  display: flex;
+  justify-content: center;
+}
+
+.player-item {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 20px; /* Zaoblené rohy pro bublinu */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+.player-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.player-info {
+  margin-left: 10px;
+}
+
+.player-name {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.player-flag {
+  width: 30px; /* Velikost vlajky */
+  height: 20px;
+  margin-top: 5px; /* Odsazení nad vlajkou */
+}
+
