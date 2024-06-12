@@ -1,1 +1,32 @@
+.fifa-tab-bar {
+  background: linear-gradient(90deg, #2c3e50, #4ca1af);
+  color: #ffffff;
+  font-family: 'FIFA', sans-serif;
+}
+
+.fifa-tab-bar ion-tab-button {
+  --color-selected: #ffffff;
+  --color: #d3d3d3;
+  --background: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.fifa-tab-bar ion-tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  --color: #ffffff;
+}
+
+.fifa-tab-bar ion-tab-button.ion-tab-button-selected {
+  background-color: rgba(255, 255, 255, 0.2);
+  --color: #ffffff;
+}
+
+.fifa-tab-bar ion-tab-button ion-icon {
+  font-size: 24px;
+}
+
+.fifa-tab-bar ion-tab-button ion-label {
+  font-size: 14px;
+  margin-top: 4px;
+}
 
