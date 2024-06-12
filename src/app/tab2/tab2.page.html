@@ -13,15 +13,19 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-list>
-        <ion-item *ngFor="let player of players2$ | async" routerLink="/player" (click)="transferPlayer2(player)">
-            <ion-avatar slot="start" class="player-avatar">
-                <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
-            </ion-avatar>
-            <ion-label>{{ player.name.display }}</ion-label>
-            <ion-note slot="end">
-                {{ player.birth.date.label }}
-            </ion-note>
-        </ion-item>
-    </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col size="6" *ngFor="let player of players2$ | async" class="player-col">
+                <ion-item class="player-item" lines="none" routerLink="/player" (click)="transferPlayer2(player)">
+                    <ion-avatar slot="start" class="player-avatar">
+                        <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+                    </ion-avatar>
+                    <ion-label class="player-label">
+                        <h3>{{ player.name.display }}</h3>
+                        <p>{{ player.birth.date.label }}</p>
+                    </ion-label>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
