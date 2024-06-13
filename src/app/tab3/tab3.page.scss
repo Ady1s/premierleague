@@ -1,58 +1,70 @@
 .page3-header {
-  background: linear-gradient(90deg, #ff0000, #b30000); /* Červený barevný gradient pro hlavičku */
+  background: linear-gradient(45deg, #2193b0, #6dd5ed);
   color: #ffffff;
+  font-family: 'Arial', sans-serif;
+
+  ion-title {
+    font-family: 'Arial', sans-serif;
+  }
 }
 
 .page3-content {
-  background-color: #ecf0f1;
-}
+  background-color: #f5f5f5;
+  color: #333333;
 
-.player-col {
-  display: flex;
-  justify-content: center;
-}
+  ion-toolbar {
+    --background: #2193b0;
+    --color: #ffffff;
+  }
 
-.player-item {
-  width: 90%;
-  margin: 10px auto;
-  border-radius: 20px; /* Zaoblené rohy pro bublinu */
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-}
+  ion-searchbar {
+    margin-bottom: 10px;
+  }
 
-.player-avatar {
-  width: 50px;
-  height: 50px;
-}
+  .player-col {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 
-.player-info {
-  margin-left: 10px;
-}
+  .player-card {
+    width: 100%;
+    max-width: 280px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 
-.player-name {
-  font-size: 1rem;
-  font-weight: bold;
-}
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.player-flag {
-  width: 30px; /* Velikost vlajky */
-  height: 20px;
-  margin-top: 5px; /* Odsazení nad vlajkou */
-}
-.page2-header {
-  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
-  color: #ffffff;
-}
+    ion-card-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ffffff;
+      padding: 10px;
 
-.page3-header {
-  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
-  color: #ffffff;
-}
+      .player-avatar {
+        --size: 80px;
+        margin-bottom: 10px;
+      }
 
-.page2-content,
-.page3-content {
-  background-color: #ecf0f1;
-}
+      .player-info {
+        text-align: center;
 
+        .player-name {
+          font-size: 1.2em;
+          font-weight: bold;
+          color: #333333;
+        }
+
+        .player-flag {
+          width: 30px;
+          height: 20px;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

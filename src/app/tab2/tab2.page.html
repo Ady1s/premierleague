@@ -1,8 +1,12 @@
 <ion-header [translucent]="true" class="page2-header">
     <ion-toolbar>
-        <ion-title>
-            Players
-        </ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Players</ion-title>
+    </ion-toolbar>
+    <ion-toolbar>
+        <ion-searchbar color="primary" [debounce]="300" (ionInput)="searchPlayer($event)"></ion-searchbar>
     </ion-toolbar>
 </ion-header>
 
@@ -16,51 +20,16 @@
     <ion-grid>
         <ion-row>
             <ion-col size="6" *ngFor="let player of players2$ | async" class="player-col">
-                <ion-item class="player-item" lines="none" routerLink="/player" (click)="transferPlayer2(player)">
-                    <ion-avatar slot="start" class="player-avatar">
-                        <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
-                    </ion-avatar>
-                    <ion-label class="player-label">
-                        <h3>{{ player.name.display }}</h3>
-                        <p>{{ player.birth.date.label }}</p>
-                    </ion-label>
-                </ion-item>
+                <ion-card class="player-card" (click)="transferPlayer2(player)">
+                    <ion-card-header>
+                        <ion-avatar class="player-avatar">
+                            <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+                        </ion-avatar>
+                        <ion-card-title>{{ player.name.display }}</ion-card-title>
+                        <ion-card-subtitle>{{ player.birth.date.label }}</ion-card-subtitle>
+                    </ion-card-header>
+                </ion-card>
             </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
-<ion-header [translucent]="true" class="page2-header">
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title>Page 2</ion-title>
-        <ion-avatar slot="start">
-            <ion-img src="assets/icon/favicon.png"></ion-img>
-        </ion-avatar>
-    </ion-toolbar>
-    <ion-toolbar>
-        <ion-searchbar color="primary" [debounce]="300" (ionInput)="searchPlayer($event)"></ion-searchbar>
-    </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" class="page2-content">
-    <ion-header collapse="condense">
-        <ion-toolbar>
-            <ion-title size="large">Page 2</ion-title>
-        </ion-toolbar>
-    </ion-header>
-
-    <ion-list>
-        <ion-item *ngFor="let player of players2$ | async" routerLink="/player-details/{{ player.id }}" (click)="transferPlayer2(player)">
-            <ion-avatar slot="start">
-                <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
-            </ion-avatar>
-            <ion-label>{{ player.name.display }}</ion-label>
-            <ion-note slot="end">
-                {{ player.birth.date.label }}
-            </ion-note>
-        </ion-item>
-    </ion-list>
-</ion-content>
-

@@ -28,6 +28,11 @@ export class Tab1Page {
     this.playerService.player = player
   }
 
+  /**
+   * Vyhledává hřáče podle jména
+   * 
+   * @param event
+   */
   searchPlayer(event: CustomEvent) {
     const value = event.detail.value.toLowerCase()
 

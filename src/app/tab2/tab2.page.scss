@@ -1,10 +1,16 @@
 .page2-header {
-  background: linear-gradient(90deg, #ff0000, #b30000); /* Červený barevný  hlava */
-  color: (90deg, #2c3e50, #4ca1af);
+  --background: #3880ff;
+  --color: #fff;
 }
 
 .page2-content {
-  background-color:(90deg, #2c3e50, #4ca1af);
+  ion-toolbar {
+    --background: #3880ff;
+    --color: #fff;
+  }
+  ion-searchbar {
+    margin-bottom: 10px;
+  }
 }
 
 .player-col {
@@ -12,51 +18,26 @@
   justify-content: center;
 }
 
-.player-item {
-  width: 90%;
-  margin: 10px auto;
-  border-radius: 10px;
-  background-color:(90deg, #2c3e50, #4ca1af);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-  &:not(:last-child) {
-    border-bottom: 2px solid #ff0000; /* Barva podbarvení mezi hráči */
+.player-card {
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  ion-avatar {
+    --size: 80px;
+    margin: 0 auto 10px auto;
   }
-}
-
-.player-avatar {
-  width: 50px;
-  height: 50px;
-}
-
-.player-label {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.player-label h3 {
-  margin: 5px 0;
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-.player-label p {
-  margin: 0;
-  font-size: 0.8rem;
-}
-.page2-header {
-  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
-  color: #ffffff;
-}
-
-.page3-header {
-  background: linear-gradient(90deg, #3498db, #2c3e50); /* Modrý barevný gradient pro hlavičku */
-  color: #ffffff;
-}
-
-.page2-content,
-.page3-content {
-  background-color: #ecf0f1;
+  ion-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  ion-card-title {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  ion-card-subtitle {
+    font-size: 1em;
+    color: #666;
+  }
 }
 

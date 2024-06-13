@@ -21,9 +21,8 @@ export class PlayerService {
     .pipe(map(players => {
       console.log(players)
       return players.content.map((player:Player) => {
-        return {
-          ...player
-        }
+        return player
+
         })
       })
     );

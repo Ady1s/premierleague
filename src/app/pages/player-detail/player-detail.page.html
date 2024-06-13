@@ -4,10 +4,13 @@
             <ion-back-button></ion-back-button>
         </ion-buttons>
         <ion-title>{{ player.name.display }}</ion-title>
-        <ion-avatar slot="start" class="player-avatar">
-            <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
-        </ion-avatar>
+        <div class="player-avatar-container" slot="end">
+            <ion-avatar class="player-avatar">
+                <ion-img [src]="'https://resources.premierleague.com/premierleague/photos/players/40x40/' + player.altIds.opta + '.png'"></ion-img>
+            </ion-avatar>
+        </div>
     </ion-toolbar>
+
 </ion-header>
 
 <ion-content [fullscreen]="true" class="fifa-content">
@@ -35,7 +38,7 @@
                         <ion-note slot="end">{{ player.info.shirtNum }}</ion-note>
                     </ion-item>
                     <ion-item>
-                        <ion-label> Birth Country</ion-label>
+                        <ion-label>Birth Country</ion-label>
                         <ion-note slot="end">{{ player.nationalTeam.country }}</ion-note>
                     </ion-item>
                     <ion-item>
